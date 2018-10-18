@@ -3,6 +3,7 @@ class CObjectManager{
 public:
     CObjectManager();
     virtual ~CObjectManager();
-public:
+private:
+    
 
 };
