@@ -14,8 +14,9 @@ set(SRCS src/MiniGame.cpp
     src/Npc.cpp
     src/World.cpp
     src/ObjectManager.cpp)
-
+# 设置生成生成的目标
 add_executable(MiniGame ${SRCS})
+# 设置生成到哪里
 set_target_properties(MiniGame PROPERTIES 
 RUNTIME_OUTPUT_DIRECTORY_DEBUG ./bin
 RUNTIME_OUTPUT_DIRECTORY_RELEASE ./bin
