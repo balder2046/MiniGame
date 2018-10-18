@@ -11,7 +11,8 @@ set(SRCS src/MiniGame.cpp
     src/Character.cpp
     src/Player.cpp
     src/Item.cpp
-    src/Npc.cpp)
+    src/Npc.cpp
+    src/World.cpp)
 
 add_executable(MiniGame ${SRCS})
 set_target_properties(MiniGame PROPERTIES 
