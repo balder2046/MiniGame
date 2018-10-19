@@ -17,10 +17,7 @@ public:
 public:
     CPlayer *AddPlayer();
 private:
-    typedef std::list<CObjectBase *> VECTOR_OBJECT_BASE;
-
-    typedef VECTOR_OBJECT_BASE::iterator OBJECT_BASE_ITERATOR;
-    VECTOR_OBJECT_BASE m_objects;
-    std::map<long long,CObjectBase *> m_mapId2Obj;
+    
+    std::map<long long,CObjectBase *> m_objects;
 
 };

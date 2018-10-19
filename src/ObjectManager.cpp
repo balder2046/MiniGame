@@ -4,9 +4,9 @@ CObjectManager::CObjectManager(){
     
 }
  struct __Delete{
-        void operator ()(CObjectBase * ptr)
+        void operator ()(const std::pair<long long ,CObjectBase *> &valuepair)
         {
-            delete ptr;
+            delete valuepair.second;
         }
     } __t;
 CObjectManager::~CObjectManager(){
@@ -17,9 +17,9 @@ CObjectManager::~CObjectManager(){
 }
  CObjectBase *CObjectManager::getObjectByID(long long idFind) const
  {
-     std::map<long long ,CObjectBase *>::const_iterator iterFind;
-     iterFind = m_mapId2Obj.find(idFind);
-     if (iterFind == m_mapId2Obj.end())
+     
+     std::map<long long,CObjectBase *>::const_iterator iterFind = m_objects.find(idFind);
+     if (iterFind == m_objects.end())
      {
         return 0;
      }
@@ -36,19 +36,12 @@ void CObjectManager::removeObjectByID(long long idFind)
 }
 void CObjectManager::removeObject(CObjectBase *pObj)
 {
-    m_mapId2Obj.erase(pObj->getObjectID());
-    VECTOR_OBJECT_BASE::iterator iter;
-    iter = std::find(m_objects.begin(),m_objects.end(),pObj);
-    if (iter != m_objects.end())
-    {
-        delete *iter;
-        m_objects.erase(iter);
-    }
+   m_objects.erase(pObj->getObjectID());
+   delete pObj;
 }
 
 CPlayer  *CObjectManager::AddPlayer(){
     CPlayer *newPlayer = new CPlayer();
-    m_objects.push_back(newPlayer);
-    m_mapId2Obj[newPlayer->getObjectID()] = newPlayer;
+    m_objects[newPlayer->getObjectID()] = newPlayer;
     return newPlayer;
 }
