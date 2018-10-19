@@ -1,5 +1,5 @@
 #pragma once
-#include "DynamicObject.h"
+#include "dynamicobject.h"
 class CCharacter : public CDynamicObject{
 public:
     CCharacter();

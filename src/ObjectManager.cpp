@@ -1,4 +1,4 @@
-#include "ObjectManager.h"
+#include "objectmanager.h"
 CObjectManager::CObjectManager(){
 
 }

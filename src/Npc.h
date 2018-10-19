@@ -1,5 +1,5 @@
 #pragma once
-#include "Character.h"
+#include "character.h"
 class CNpc: CCharacter{
     public:
     CNpc();

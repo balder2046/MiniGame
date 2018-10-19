@@ -1,5 +1,5 @@
 #pragma once
-#include "ObjectBase.h"
+#include "objectbase.h"
 class CWorld : CObjectBase{
 public:
     CWorld();

@@ -1,5 +1,5 @@
 #pragma once
-#include "Character.h"
+#include "character.h"
 class CPlayer: CCharacter{
     public:
     CPlayer();

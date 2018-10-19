@@ -1,4 +1,4 @@
-#include "Npc.h"
+#include "npc.h"
 CNpc::CNpc()
 {
 

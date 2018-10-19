@@ -1,6 +1,6 @@
 #pragma once
-#include "ObjectBase.h"
-#include "Math3D.h"
+#include "objectbase.h"
+#include "math3d.h"
 class CMapObject : CObjectBase
 {
 public:

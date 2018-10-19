@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "ObjectBase.h"
+#include "objectbase.h"
 class CObjectManager{
 public:
     CObjectManager();

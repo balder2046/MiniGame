@@ -1,4 +1,4 @@
-#include "DynamicObject.h"
+#include "dynamicobject.h"
  CDynamicObject::CDynamicObject(){
 
  }

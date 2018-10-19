@@ -1,5 +1,5 @@
 #pragma once
-#include "MapObject.h"
+#include "mapobject.h"
 class CDynamicObject : CMapObject{
     public:
     CDynamicObject();

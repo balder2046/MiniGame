@@ -1,4 +1,4 @@
-#include "World.h"
+#include "world.h"
 CWorld::CWorld(){
 
 }
