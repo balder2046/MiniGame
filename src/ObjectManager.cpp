@@ -1,12 +1,18 @@
 #include "objectmanager.h"
-
+#include <algorithm>
 CObjectManager::CObjectManager(){
     
 }
+ struct __Delete{
+        void operator ()(CObjectBase * ptr)
+        {
+            delete ptr;
+        }
+    } __t;
 CObjectManager::~CObjectManager(){
-    for (VECTOR_OBJECT_BASE::iterator iter = m_objects.begin(); iter != m_objects.end();++iter){
-        delete *iter;
-    }
+ 
+   
+    std::for_each(m_objects.begin(),m_objects.end(),__t);
     m_objects.clear();
 }
  CObjectBase *CObjectManager::getObjectByID(long long idFind) const
@@ -32,13 +38,11 @@ void CObjectManager::removeObject(CObjectBase *pObj)
 {
     m_mapId2Obj.erase(pObj->getObjectID());
     VECTOR_OBJECT_BASE::iterator iter;
-    for (iter = m_objects.begin(); iter != m_objects.end(); ++iter){
-        if (*iter == pObj)
-        {
-            delete *iter;
-            m_objects.erase(iter);
-            break;
-        }
+    iter = std::find(m_objects.begin(),m_objects.end(),pObj);
+    if (iter != m_objects.end())
+    {
+        delete *iter;
+        m_objects.erase(iter);
     }
 }
 
