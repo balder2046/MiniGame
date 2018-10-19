@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <list>
 #include "objectbase.h"
 #include "player.h"
 
@@ -15,7 +16,7 @@ public:
 public:
     CPlayer *AddPlayer();
 private:
-    typedef std::vector<CObjectBase *> VECTOR_OBJECT_BASE;
+    typedef std::list<CObjectBase *> VECTOR_OBJECT_BASE;
     typedef VECTOR_OBJECT_BASE::iterator OBJECT_BASE_ITERATOR;
     VECTOR_OBJECT_BASE m_objects;
 
