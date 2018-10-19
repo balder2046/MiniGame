@@ -1,6 +1,6 @@
 #pragma once
 #include "objectbase.h"
-class CItem : CObjectBase{
+class CItem : public CObjectBase{
 public:
     CItem();
     ~CItem();

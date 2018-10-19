@@ -1,6 +1,6 @@
 #pragma once
 #include "character.h"
-class CPlayer: CCharacter{
+class CPlayer: public CCharacter{
     public:
     CPlayer();
     ~CPlayer();

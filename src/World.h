@@ -1,6 +1,6 @@
 #pragma once
 #include "objectbase.h"
-class CWorld : CObjectBase{
+class CWorld : public CObjectBase{
 public:
     CWorld();
     virtual ~CWorld();
